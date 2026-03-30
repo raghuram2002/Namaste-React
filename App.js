@@ -1,28 +1,19 @@
-    const headding = React.createElement(
-        "h1", 
-        {id:"headding"}, 
-        [
-             React.createElement(
-            "div", 
-            {id:"container"},
-            React.createElement(
-                "h2",
-                {id:"innerHeading", key: 0},
-                "hello mowa"
-            )
-        ),
-         React.createElement(
-            "div", 
-            {id:"container1"},
-            React.createElement(
-                "h2",
-                {id:"innerHeading", key: 1},
-                "hello mowa"
-            )
-        )
-        ]
-    );
+import React from "react"
+import ReactDOM from "react-dom/client"
+
+const FirstComp = ()=>(
+    <h1>Hello from first component!!!!</h1>
+)
+
+const MainComp = () =>(
+    
+        <>
+            <FirstComp />
+            <h2>Render first component inside the main component</h2>
+        </>
+    
+)
 
 
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(headding)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MainComp/>)
